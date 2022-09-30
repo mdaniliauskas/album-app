@@ -12,7 +12,7 @@ export default class Busca extends Component {
 
     onTermoAlterado = (evento) => {
         console.log(evento.target.value)
-        this.setState({temoBusca: evento.target.value})
+        this.setState({termoBusca: evento.target.value})
     }
 
     onFormSubmit = (event) => {
@@ -25,7 +25,7 @@ export default class Busca extends Component {
             <form onSubmit={this.onFormSubmit}>
                 <div className='flex flex-column'>
                 <span className='p-input-icon-right w-full'>
-                    <i className='pi pi-search' ></i>
+                    <i className='pi pi-search'></i>
                     <InputText
                         value={this.state.termoBusca}
                         className='w-full'
