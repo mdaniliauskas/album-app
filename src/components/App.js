@@ -1,13 +1,33 @@
 import { Card } from 'primereact/card';
 import  Busca from './Busca'
+import React from 'react';
+import env from 'react-dotenv';
 
+export default class App extends React.Component {
+  onBuscaRealizada = (termo) => {
+    console.log(termo)
+  }
 
-const App = () => {
-  return (
-    <Card>
-      <Busca />
-    </Card> 
-  )  
+  render() {
+    console.log(env.PEXELS_KEY)
+    console.log(window.env)
+
+    return (
+      <div className="grid justify-content-center m-auto w-9 border-round border-1 border-400">
+      <div className="col-12">
+      <h1 className="text-center">Exibir uma lista de...</h1>
+      </div>
+      <div className="col-8">
+        <Card>
+          <Busca onBuscaRealizada={this.onBuscaRealizada}/>
+        </Card>
+      
+      </div>
+      </div>
+      )
+  }
+
 }
 
-export default App;
+ 
+
